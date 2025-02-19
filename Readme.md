@@ -44,7 +44,15 @@ To run this project on your local computer, follow these steps:
 No special installation is required for this project. You can simply run it using any web browser.
 
 ## Screenshots
-You can add screenshots of the project here.
+![form-1](./img/form-1.png)
+
+<hr>
+
+![form-2](./img/form-2.png)
+
+<hr>
+
+![form-3](./img/form-3.png)
 
 ## Contributing
 If you would like to contribute to this project, please follow these steps:
