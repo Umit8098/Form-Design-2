@@ -29,7 +29,7 @@ To run this project on your local computer, follow these steps:
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/username/form-project.git
+   git clone https://github.com/Umit8098/Form-Design-2.git
    ```
 
 2. **Navigate to the project directory:**
