@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Form</title>
+        
+</head>
+<body>
+    
+    <h1>Form Design</h1>
+
+    <form action="result.html" method="get">
+        <div>
+            <fieldset>
+                <legend>Kişisel Bilgiler</legend>
+                <br>
+                <label for="firstName">Ad:</label>
+                <br>
+                <input type="text" name="isim" value="" id="firstName" placeholder="adınız.." required>
+                <br><br>
+                <label for="lastName">Soyad:</label>
+                <br>
+                <input type="text" name="soyisim" value="" id="lastName" placeholder="soyadınız.." >
+                <br><br>
+                <label for="parola">Parola:</label>
+                <br>
+                <input type="password" name="parola" value="" id="parola" placeholder="parolanızı giriniz">
+                <br><br>
+                <label for="">Gender</label>
+                <br>
+                <label for="inputGender">Erkek:</label>
+                <input type="radio" name="gender" value="Erkek" id="inputGender" checked> 
+                <label for="inputGender1">Kadın:</label>
+                <input type="radio" name="gender" value="Kadın" id="inputGender1">
+
+                <p>Favori hayvan dostlarınızı seçiniz.</p>
+                <input type="checkbox" name="animal1" id="panda" value="Panda">
+                <label for="panda">Panda</label>
+                <input type="checkbox" name="animal2" id="balık" value="Balık">
+                <label for="balık">Balık</label>
+                <input type="checkbox" name="animal3" id="kedi" value="Kedi">
+                <label for="kedi">Kedi</label>
+
+                <br><br>
+
+                <label for="">yaşınız:</label>
+                <br>
+                <input type="number" name="yaş" id="age" step="" min="18" max="45" list="" placeholder="yaşınız.." style="width: 14em;">
+
+                <br><br>
+
+                <label for="age">Yaşınız-list:</label>
+                <br>
+                <input type="number" id="age" name="yaş-list" list="yaslar" placeholder="Yaşınızı seçin veya yazın" style="width: 14em;">
+    
+                <datalist id="yaslar">
+                    <option value="18">
+                    <option value="20">
+                    <option value="25">
+                    <option value="30">
+                    <option value="35">
+                    <option value="40">
+                    <option value="45">
+                </datalist>
+
+                <br><br>
+    
+                <label for="tarih">Doğum Tarihinizi giriniz:</label>
+                <br>
+                <input type="date" name="dogum_tarihi" value="" id="tarih" min="1900-01-01" max="2030-12-31" >
+                
+                <br><br>
+                <label for="mail">mail:</label>
+                <br>
+                <input type="email" name="Kullanıcı_e-mail" id="mail">
+        
+                <br><br>
+        
+                <label for="mail1">Enter your e-mail:</label>
+                <br>
+                <input type="email" name="Kullanıcı_e-mail" id="mail1" size="30">
+            
+                <br><br>
+                
+                <label for="email">E-Posta:</label>
+                <br>
+                <input type="email" id="email" name="email" 
+                       pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                       placeholder="E-Posta adresiniz" 
+                       title="Geçerli bir e-posta adresi girin">
+
+                <br><br>
+                    
+                <label for="tel">Telefon:</label>
+                <br>
+                <input type="tel" id="tel" name="tel" 
+                       pattern="^05[0-9]{9}$" 
+                       placeholder="05XXXXXXXXX" 
+                       title="Telefon numarası 05 ile başlamalı ve 10 haneli olmalıdır">
+
+                <br><br>
+               
+                <label for="phone1">Telefon:</label>
+                <br>
+                <input type="text" id="phone1" name="phone" 
+                               pattern="[0-9]{5,10}" 
+                               placeholder="Telefon numarası" 
+                               title="En az 5, en fazla 10 rakam girin">
+                
+                <br><br>
+            
+                <label for="phone">Telefon:</label>
+                <br>
+                <input type="tel" id="phone" name="phone" maxlength="17" placeholder="0(555) 555 55 55" required>
+                <input type="button" value="Sil" id="sil">
+                    <script>
+                        document.getElementById("phone").addEventListener("input", function (e) {
+                            let numara = e.target.value.replace(/\D/g, ""); // Sadece rakamları al
+
+                            if (numara.length > 0) numara = "0" + numara.replace(/^0+/, ""); // İlk rakam hep 0 olacak
+                        
+                            // Format: 0(XXX) XXX XX XX
+                            if (numara.length > 1) numara = numara.slice(0, 1) + "(" + numara.slice(1);
+                            if (numara.length > 4) numara = numara.slice(0, 5) + ") " + numara.slice(5);
+                            if (numara.length > 9) numara = numara.slice(0, 10) + " " + numara.slice(10);
+                            if (numara.length > 12) numara = numara.slice(0, 13) + " " + numara.slice(13);
+                        
+                            e.target.value = numara.slice(0, 16); // Maksimum 16 karakter
+                        });
+                        // Yanlış girilen numarayı temizler;
+                        document.getElementById("sil").addEventListener("click", () => {
+                            document.getElementById("phone").value=" ";
+                        });
+                    </script>            
+            </fieldset>
+
+            <fieldset>
+                <legend>Diğer Bilgiler</legend>
+                <br>
+                <label for="renk">Renk seçiniz</label>
+                <br>
+                <input type="color" name="seçilen_renk" id="renk">
+                
+                <br><br>
+      
+                <label for="search">ara:</label>
+                <br>
+                <input type="search" name="search" id="search" placeholder="arama.." minlength="" maxlength="" size="">
+        
+                <br><br>
+        
+                <label for="search">Ara:</label>
+                <br>
+                <input type="search" name="search" id="search" 
+                            pattern="[A-Za-zğüşıöçĞÜŞİÖÇ\s]+" 
+                            placeholder="Sadece harf girin.." 
+                            title="Sadece harf kullanabilirsiniz">
+                <br><br>              
+                
+                <label for="file">Dosya Seç:</label>
+                <br>
+                <input type="file" id="file" name="dosya">
+                        
+                <br><br>
+
+                <label for="image">Resim Yükle:</label>
+                <br>
+                <input type="file" id="image" name="resim" accept="image/*">            
+                        
+                    
+                <br><br>        
+            
+                <label for="pdf">PDF Yükle:</label>
+                <br>
+                <input type="file" id="pdf" name="belge" accept=".pdf">
+                    
+                <br><br>
+            
+               
+                <label for="fileUpload">Dosya Yükle:</label>
+                <br>
+                <input type="file" id="fileUpload" name="file">
+                <p id="warning" style="color: red;"></p>
+    
+                <script>
+                  document.getElementById("fileUpload").addEventListener("change", function () {
+                      const file = this.files[0];
+                      if (file && file.size > 2 * 1024 * 1024) {  // 2MB sınırı
+                          document.getElementById("warning").textContent = "Dosya boyutu 2MB'ı geçemez!";
+                          this.value = ""; // Seçilen dosyayı temizle
+                      } else {
+                          document.getElementById("warning").textContent = "";
+                      }
+                  });
+                </script>
+                
+            </fieldset>
+
+            <fieldset>
+                <legend>Tercih Bilgileri</legend>
+                <br>
+                <label for="seker">Tatlı tercihi</label>
+                <br>
+                <select name="seçilen_tatlılar" id="seker" size="3" multiple>
+                    <option value="Sütlaç"> Sütlaç</option>
+                    <option value="Keşkül"> Keşkül</option>
+                    <option value="Suphangle"> Suphangle</option>
+                    <option value="Aşure"> Aşure</option>
+                    <option value="magnolia"> magnolia</option>
+                    <option value="Güllaç"> Güllaç</option>
+                </select>
+
+                <br><br>
+
+                <label for="seker2">Tatlı tercihi</label>
+                <br>
+                <select name="seçilen_tatlılar" id="seker2" size="7" multiple>
+                    <optgroup label="Sütlü Tatlılar">
+                        <option value="Sütlaç"> Sütlaç</option>
+                        <option value="Keşkül"> Keşkül</option>
+                        <option value="Suphangle"> Suphangle</option>
+                    
+                    </optgroup>
+                    <optgroup label="Şerbetli Tatlılar">
+                        <option value="Baklava"> Baklava</option>
+                        <option value="Künefe"> Künefe</option>
+                        <option value="Katmer"> Katmer</option>
+                        <option value="Tulumba"> Tulumba</option>
+                    </optgroup>
+                </select>
+
+                <br><br>
+    
+               
+                <label for="yorum">Yorum</label>
+                <br>
+                <textarea name="girilen_yorum" id="yorum" rows="10" cols="40"           
+                          placeholder="Enter your comments here" 
+                          style="resize: none; width: 40%">
+                </textarea>
+        
+                <br><br>
+
+                <label for="yorum">Yorum</label>
+                <br>
+                <textarea name="girilen_yorum" id="yorum" rows="10" cols="40" placeholder="Enter your comments here"></textarea>
+        
+                <br><br>
+        
+                <label for="input-browser">Browser</label>
+                <br>
+                <input type="text" name="kullanılan_browser" id="input-browser" list="browsers">
+                <datalist id="browsers">
+                    <option value="Chrome"></option>
+                    <option value="Firefox"></option>
+                    <option value="Safari"></option>
+                    <option value="Brave"></option>
+                </datalist>
+                <br>
+
+            </fieldset>
+        </div>
+
+        <br><br>
+        <div id="send-reset">
+            <!-- <button type="submit">Send</button> -->
+            <input type="submit" value="Send" class="send-reset" id="submit">
+            <input type="reset" value="Sıfırla" class="send-reset" id="reset">
+        </div>
+    </form>

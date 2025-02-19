@@ -1,0 +1,28 @@
+
+fieldset {
+    width: 70%;
+    margin: auto;
+}
+
+h1 {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+#send-reset {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 3rem;
+
+}
+
+#seker, #seker2 {
+    width: 40%;
+    border: 2px solid red;
+}
+
+#submit, #reset {
+    margin: 0.1rem 1rem;
+}
